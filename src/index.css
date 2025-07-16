@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Portfolio Design System - Modern Dark Theme with Vibrant Accents */
+
+@layer base {
+  :root {
+    /* Dark theme base colors */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 95%;
+
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 95%;
+
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 9% 95%;
+
+    /* Vibrant primary with neon purple */
+    --primary: 271 82% 60%;
+    --primary-foreground: 220 9% 95%;
+    --primary-glow: 271 82% 70%;
+
+    /* Subtle secondary */
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 9% 85%;
+
+    /* Muted elements */
+    --muted: 220 13% 13%;
+    --muted-foreground: 220 9% 65%;
+
+    /* Accent with cyan */
+    --accent: 193 100% 55%;
+    --accent-foreground: 220 13% 9%;
+    --accent-glow: 193 100% 65%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 271 82% 60%;
+
+    --radius: 0.75rem;
+
+    /* Portfolio specific tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(271 82% 60%) 0%, hsl(193 100% 55%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(220 13% 15%) 0%, hsl(220 13% 11%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(220 13% 15% / 0.1) 0%, hsl(220 13% 11% / 0.05) 100%);
+    
+    /* Glow effects */
+    --glow-primary: 0 0 40px hsl(271 82% 60% / 0.4);
+    --glow-accent: 0 0 40px hsl(193 100% 55% / 0.4);
+    --glow-subtle: 0 0 20px hsl(271 82% 60% / 0.2);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -5px hsl(220 13% 5% / 0.5);
+    --shadow-hover: 0 20px 50px -10px hsl(271 82% 60% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Dark theme inherits from light theme colors for portfolio */
+  .dark {
+    /* Same as light theme for portfolio - we want dark theme by default */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 95%;
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 95%;
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 9% 95%;
+    --primary: 271 82% 60%;
+    --primary-foreground: 220 9% 95%;
+    --primary-glow: 271 82% 70%;
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 9% 85%;
+    --muted: 220 13% 13%;
+    --muted-foreground: 220 9% 65%;
+    --accent: 193 100% 55%;
+    --accent-foreground: 220 13% 9%;
+    --accent-glow: 193 100% 65%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 13% 18%;
+    --input: 220 13% 15%;
+    --ring: 271 82% 60%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    backdrop-filter: blur(20px);
+    background: var(--gradient-glass);
+    border: 1px solid hsl(var(--border));
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Neon glow button */
+  .neon-button {
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-primary);
+    transition: var(--transition-smooth);
+    border: 1px solid hsl(var(--primary));
+  }
+  
+  .neon-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Floating animation */
+  .floating {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  /* Pulse glow effect */
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite;
+  }
+  
+  @keyframes pulseGlow {
+    0%, 100% { 
+      box-shadow: var(--glow-subtle);
+    }
+    50% { 
+      box-shadow: var(--glow-primary);
+    }
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    transition: var(--transition-smooth);
+    cursor: pointer;
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Animated underline */
+  .animated-underline {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: var(--transition-smooth);
+  }
+  
+  .animated-underline:hover::after {
+    left: 0;
+  }
+  
+  /* Skill bar animation */
+  .skill-bar {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--gradient-primary);
+    transition: width 1s ease-out;
+    width: 0%;
+  }
+  
+  .skill-bar.animate::before {
+    width: var(--skill-width);
+  }
+  
+  /* Typing animation */
+  .typing {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--primary));
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: hsl(var(--primary)) }
+  }
+}
