@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Branding */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold gradient-text mb-2">Aadhi's Portfolio</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-2">Aadhi's Resume</h3>
             <p className="text-muted-foreground">
               Frontend UI/UX Designer
             </p>
@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-muted-foreground mb-2">
-              © {currentYear} Aadhi's Portfolio. All rights reserved.
+              © {currentYear} Aadhi's Resume. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground flex items-center justify-center md:justify-end gap-1">
               Made with <Heart className="w-4 h-4 text-red-500" /> and lots of coffee
