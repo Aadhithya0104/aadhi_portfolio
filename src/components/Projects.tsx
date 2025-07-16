@@ -21,11 +21,7 @@ const Projects = () => {
   ];
 
   const categories = [
-    { id: "all", name: "All Projects" },
-    { id: "fullstack", name: "Full Stack" },
-    { id: "frontend", name: "Frontend" },
-    { id: "mobile", name: "Mobile" },
-    { id: "iot", name: "IoT" }
+    { id: "all", name: "My Projects" },
   ];
 
   const filteredProjects = activeCategory === "all" 
