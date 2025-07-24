@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsVisible(true);
@@ -53,6 +55,12 @@ const Hero = () => {
             >
               Get In Touch
             </Button>
+          </div>
+          {/* Navigation buttons for About, Projects, Contact */}
+          <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 justify-center">
+            <Button className="w-28 sm:w-36" onClick={() => navigate('/about')}>About</Button>
+            <Button className="w-28 sm:w-36" onClick={() => navigate('/projects')}>Projects</Button>
+            <Button className="w-28 sm:w-36" onClick={() => navigate('/contact')}>Contact</Button>
           </div>
         </div>
       </div>

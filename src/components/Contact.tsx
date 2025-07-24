@@ -61,9 +61,9 @@ const Contact = () => {
         </div>
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
           {/* Contact Info */}
-          <div className="space-y-10">
-            <Card className="glass card-hover p-0">
-              <CardContent className="p-8">
+          <div className="flex flex-col h-full">
+            <Card className="glass card-hover p-0 h-full flex flex-col">
+              <CardContent className="p-8 flex-1 flex flex-col">
                 <h3 className="text-2xl font-semibold mb-4">Let's Connect</h3>
                 <p className="text-lg text-foreground/80 mb-8">I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
                 <div className="space-y-6">
@@ -90,19 +90,14 @@ const Contact = () => {
                         <Linkedin className="w-6 h-6" />
                       </span>
                     </a>
-                    <a href="mailto:aadhithyaviswanathan@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
-                      <span className="p-3 glass rounded-full hover:bg-primary/10 border border-border/30 transition-colors flex items-center justify-center">
-                        <Mail className="w-6 h-6" />
-                      </span>
-                    </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
           {/* Contact Form */}
-          <Card className="glass card-hover p-0">
-            <CardContent className="p-8">
+          <Card className="glass card-hover p-0 h-full flex flex-col">
+            <CardContent className="p-8 flex-1 flex flex-col">
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">

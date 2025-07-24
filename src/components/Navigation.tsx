@@ -68,21 +68,6 @@ const Navigation = () => {
         </div>
         {/* Mobile: Hide menu button and menu */}
       </div>
-      {/* Mobile Sidebar Navigation */}
-      <div className="fixed left-0 top-0 bottom-0 h-full z-50 flex flex-col gap-4 bg-background/80 shadow-lg rounded-r-2xl border border-border/30 p-2 md:hidden justify-center items-center">
-        <button onClick={() => scrollToSection('#about')} className="flex flex-col items-center text-foreground/80 hover:text-primary transition-colors p-2">
-          <User className="w-6 h-6 mb-1" />
-          <span className="text-xs">About</span>
-        </button>
-        <button onClick={() => scrollToSection('#projects')} className="flex flex-col items-center text-foreground/80 hover:text-primary transition-colors p-2">
-          <Folder className="w-6 h-6 mb-1" />
-          <span className="text-xs">Projects</span>
-        </button>
-        <button onClick={() => scrollToSection('#contact')} className="flex flex-col items-center text-foreground/80 hover:text-primary transition-colors p-2">
-          <MailIcon className="w-6 h-6 mb-1" />
-          <span className="text-xs">Contact</span>
-        </button>
-      </div>
       {/* Mobile Floating Hire Me Button */}
       <div className="fixed bottom-6 right-6 z-50 md:hidden">
         <Dialog>
