@@ -27,22 +27,6 @@ const About = () => {
           <h2 className="text-5xl font-bold mb-4 gradient-text">About Me</h2>
           <p className="text-2xl text-muted-foreground max-w-2xl mx-auto font-medium">To secure a position where I can apply my skills and grow within a supportive team.</p>
         </div>
-        {/* Technical Skills */}
-        <div className="max-w-3xl mx-auto mb-20">
-          <Card className="glass card-hover p-0">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
-              <div className="flex flex-wrap gap-6 items-center justify-start">
-                {skillIcons.map((skill) => (
-                  <div key={skill.name} className="flex flex-col items-center w-20">
-                    {skill.icon}
-                    <span className="text-sm text-foreground/80 text-center mt-2">{skill.name}</span>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
         <div className="grid md:grid-cols-3 gap-8 items-start mb-20">
           {/* Education */}
           <Card className="glass card-hover p-0 h-full flex flex-col justify-between">
@@ -64,6 +48,20 @@ const About = () => {
                   <Badge key={area} variant="secondary" className="bg-muted text-foreground border-border/40 text-base px-4 py-2 rounded-full font-medium">
                     {area}
                   </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+          {/* Technical Skills */}
+          <Card className="glass card-hover p-0 h-full flex flex-col justify-between">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
+              <div className="flex flex-wrap gap-6 items-center justify-start">
+                {skillIcons.map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center w-20">
+                    {skill.icon}
+                    <span className="text-sm text-foreground/80 text-center mt-2">{skill.name}</span>
+                  </div>
                 ))}
               </div>
             </CardContent>

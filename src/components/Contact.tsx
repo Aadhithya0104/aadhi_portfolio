@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send, Github, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -80,14 +80,20 @@ const Contact = () => {
                 <div className="pt-8">
                   <h4 className="font-semibold mb-4">Follow Me</h4>
                   <div className="flex gap-4">
-                    <a href="https://github.com/Aadhithya0104" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="glass hover:bg-primary/10">GitHub</Button>
+                    <a href="https://github.com/Aadhithya0104" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                      <span className="p-3 glass rounded-full hover:bg-primary/10 border border-border/30 transition-colors flex items-center justify-center">
+                        <Github className="w-6 h-6" />
+                      </span>
                     </a>
-                    <a href="https://www.linkedin.com/in/aadhithya-viswanathan-0bb0a62b7/" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="glass hover:bg-primary/10">LinkedIn</Button>
+                    <a href="https://www.linkedin.com/in/aadhithya-viswanathan-0bb0a62b7/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                      <span className="p-3 glass rounded-full hover:bg-primary/10 border border-border/30 transition-colors flex items-center justify-center">
+                        <Linkedin className="w-6 h-6" />
+                      </span>
                     </a>
-                    <a href="mailto:aadhithyaviswanathan@gmail.com" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" className="glass hover:bg-primary/10">Email</Button>
+                    <a href="mailto:aadhithyaviswanathan@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                      <span className="p-3 glass rounded-full hover:bg-primary/10 border border-border/30 transition-colors flex items-center justify-center">
+                        <Mail className="w-6 h-6" />
+                      </span>
                     </a>
                   </div>
                 </div>

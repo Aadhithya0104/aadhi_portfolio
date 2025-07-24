@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Mail, Linkedin, Github, Phone, MessageCircle } from "lucide-react";
+import EnvelopeAnimation from "@/components/ui/envelope-animation";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +40,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 md:py-5 flex items-center justify-between h-[4.5rem]">
         {/* Logo */}
         <div className="text-2xl md:text-3xl font-bold tracking-tight" style={{letterSpacing: '-0.03em'}}>
-          Aadhi's Resume
+          Aadhi's Portfolio
         </div>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
@@ -61,26 +62,7 @@ const Navigation = () => {
               <Button className="neon-button shadow-none">Hire Me</Button>
             </DialogTrigger>
             <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Contact Me</DialogTitle>
-              </DialogHeader>
-              <div className="flex flex-col gap-4 mt-4">
-                <a href="mailto:aadhithyaviswanathan@gmail.com" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                  <Mail className="w-5 h-5 text-primary" /> aadhithyaviswanathan@gmail.com
-                </a>
-                <a href="https://www.linkedin.com/in/aadhithya-viswanathan-0bb0a62b7/" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="w-5 h-5 text-primary" /> LinkedIn
-                </a>
-                <a href="https://github.com/Aadhithya0104" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 text-primary" /> GitHub
-                </a>
-                <a href="tel:8072660284" className="flex items-center gap-2 hover:underline">
-                  <Phone className="w-5 h-5 text-primary" /> 8072660284
-                </a>
-                <a href={`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`} className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="w-5 h-5 text-green-500" /> WhatsApp
-                </a>
-              </div>
+              <EnvelopeAnimation />
             </DialogContent>
           </Dialog>
         </div>
@@ -113,26 +95,7 @@ const Navigation = () => {
                   <span>Hire Me</span>
                 </DialogTrigger>
                 <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>Contact Me</DialogTitle>
-                  </DialogHeader>
-                  <div className="flex flex-col gap-4 mt-4">
-                    <a href="mailto:aadhithyaviswanathan@gmail.com" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                      <Mail className="w-5 h-5 text-primary" /> aadhithyaviswanathan@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/aadhithya-viswanathan-0bb0a62b7/" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                      <Linkedin className="w-5 h-5 text-primary" /> LinkedIn
-                    </a>
-                    <a href="https://github.com/Aadhithya0104" className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                      <Github className="w-5 h-5 text-primary" /> GitHub
-                    </a>
-                    <a href="tel:8072660284" className="flex items-center gap-2 hover:underline">
-                      <Phone className="w-5 h-5 text-primary" /> 8072660284
-                    </a>
-                    <a href={`https://wa.me/${whatsappNumber}?text=${whatsappMsg}`} className="flex items-center gap-2 hover:underline" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="w-5 h-5 text-green-500" /> WhatsApp
-                    </a>
-                  </div>
+                  <EnvelopeAnimation />
                 </DialogContent>
               </Dialog>
             </Button>
