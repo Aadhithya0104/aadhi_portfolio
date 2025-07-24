@@ -57,7 +57,7 @@ const About = () => {
             <CardContent className="p-8 flex flex-col h-full">
               <h3 className="text-2xl font-semibold mb-4">Soft Skills</h3>
               <div className="flex flex-wrap gap-3">
-                {["Creativity & Problem-Solving", "User-Centered Design", "Wireframing & Prototyping", "Collaboration & Communication", "Attention to Detail", "Project Management"].map((skill) => (
+                {["Creativity & Problem-Solving",  "Time Management", "Collaboration & Communication", "Attention to Detail", "Project Management"].map((skill) => (
                   <Badge key={skill} variant="secondary" className="bg-muted text-foreground border-border/40 text-base px-4 py-2 rounded-full font-medium">
                     {skill}
                   </Badge>
