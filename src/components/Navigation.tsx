@@ -69,7 +69,7 @@ const Navigation = () => {
         {/* Mobile: Hide menu button and menu */}
       </div>
       {/* Mobile Sidebar Navigation */}
-      <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4 bg-background/80 shadow-lg rounded-r-2xl border border-border/30 p-2 md:hidden">
+      <div className="fixed left-0 top-0 bottom-0 h-full z-50 flex flex-col gap-4 bg-background/80 shadow-lg rounded-r-2xl border border-border/30 p-2 md:hidden justify-center items-center">
         <button onClick={() => scrollToSection('#about')} className="flex flex-col items-center text-foreground/80 hover:text-primary transition-colors p-2">
           <User className="w-6 h-6 mb-1" />
           <span className="text-xs">About</span>
