@@ -1,5 +1,22 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaFigma } from "react-icons/fa";
+import { SiPython, SiGit, SiVercel, SiMysql, SiTailwindcss, SiTypescript, SiNextdotjs } from "react-icons/si";
+
+const skillIcons = [
+  { name: "HTML", icon: <FaHtml5 className="w-12 h-12 text-orange-500" /> },
+  { name: "CSS", icon: <FaCss3Alt className="w-12 h-12 text-blue-600" /> },
+  { name: "JavaScript", icon: <FaJs className="w-12 h-12 text-yellow-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="w-12 h-12 text-blue-500" /> },
+  { name: "React", icon: <FaReact className="w-12 h-12 text-blue-400" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12 text-black dark:text-white" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="w-12 h-12 text-cyan-400" /> },
+  { name: "Figma", icon: <FaFigma className="w-12 h-12 text-pink-500" /> },
+  { name: "SQL", icon: <SiMysql className="w-12 h-12 text-blue-700" /> },
+  { name: "Python", icon: <SiPython className="w-12 h-12 text-yellow-500" /> },
+  { name: "Git", icon: <SiGit className="w-12 h-12 text-red-500" /> },
+  { name: "Vercel", icon: <SiVercel className="w-12 h-12 text-black dark:text-white" /> },
+];
 
 const About = () => {
   return (
@@ -18,7 +35,7 @@ const About = () => {
                 <h3 className="text-2xl font-semibold mb-4">Education</h3>
                 <ul className="text-lg text-foreground/80 leading-relaxed list-disc list-inside space-y-2">
                   <li><b>BTech in Information Technology</b> (CGPA: 7.2), Government College of Engineering, Erode</li>
-                  <li><b>Diploma in Mechatronics</b> (79%), Kongu Polytechnic College, Erode (July 2018 - June 2020)</li>
+                  <li><b>Diploma in Mechanical</b> (79%), Kongu Polytechnic College, Erode (July 2018 - June 2020)</li>
                   <li><b>SSLC</b>, Jaycees Matric Higher Secondary School, Erode (Apr 2018)</li>
                 </ul>
               </CardContent>
@@ -50,19 +67,11 @@ const About = () => {
             <Card className="glass card-hover p-0">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
-                <div className="space-y-6">
-                  {[{ name: "HTML", level: 95 }, { name: "CSS", level: 95 }, { name: "JavaScript", level: 90 }, { name: "React", level: 90 }, { name: "Figma", level: 85 }, { name: "UI/UX Design", level: 90 }].map((skill) => (
-                    <div key={skill.name} className="space-y-1">
-                      <div className="flex justify-between">
-                        <span className="text-lg font-medium">{skill.name}</span>
-                        <span className="text-muted-foreground">{skill.level}%</span>
-                      </div>
-                      <div className="h-3 bg-muted rounded-full overflow-hidden">
-                        <div 
-                          className="h-full bg-primary rounded-full transition-all duration-1000 ease-out"
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
+                <div className="flex flex-wrap gap-6 items-center justify-start">
+                  {skillIcons.map((skill) => (
+                    <div key={skill.name} className="flex flex-col items-center w-20">
+                      {skill.icon}
+                      <span className="text-sm text-foreground/80 text-center mt-2">{skill.name}</span>
                     </div>
                   ))}
                 </div>

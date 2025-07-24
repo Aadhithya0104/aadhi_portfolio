@@ -2,53 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Apple-Inspired Modern Theme */
+/* Black & White Theme: White site background, black Hero section, pastel highlight with typewriter animation */
 
 @layer base {
   :root {
-    /* Apple-like neutral colors */
-    --background: 0 0% 98%;
-    --foreground: 222 22% 10%;
+    --background: 0 0% 100%; /* white */
+    --foreground: 0 0% 0%; /* black */
     --card: 0 0% 100%;
-    --card-foreground: 222 22% 10%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 22% 10%;
-    --primary: 222 100% 60%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 222 100% 80%;
-    --secondary: 220 13% 95%;
-    --secondary-foreground: 222 22% 10%;
-    --muted: 220 13% 90%;
-    --muted-foreground: 222 22% 40%;
-    --accent: 222 100% 60%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%; /* black */
+    --primary-foreground: 0 0% 100%; /* white */
+    --primary-glow: 0 0% 0%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 80%;
+    --muted-foreground: 0 0% 20%;
+    --accent: 0 0% 0%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 222 100% 80%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 91%;
-    --input: 220 13% 95%;
-    --ring: 222 100% 60%;
+    --accent-glow: 0 0% 0%;
+    --destructive: 0 0% 100%;
+    --destructive-foreground: 0 0% 0%;
+    --border: 0 0% 80%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
     --radius: 1.5rem;
-    --gradient-primary: linear-gradient(135deg, hsl(222 100% 60%) 0%, hsl(222 100% 80%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(220 13% 95%) 0%, hsl(0 0% 100%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.7) 0%, hsl(220 13% 95% / 0.5) 100%);
-    --glow-primary: 0 0 40px hsl(222 100% 60% / 0.08);
-    --glow-accent: 0 0 40px hsl(222 100% 60% / 0.08);
-    --glow-subtle: 0 0 20px hsl(222 100% 60% / 0.04);
-    --shadow-elegant: 0 8px 32px 0 hsl(222 22% 10% / 0.08);
-    --shadow-hover: 0 16px 48px 0 hsl(222 22% 10% / 0.12);
+    --highlight: 210 100% 85%; /* pastel blue */
+    --gradient-primary: none;
+    --gradient-secondary: none;
+    --gradient-glass: none;
+    --glow-primary: none;
+    --glow-accent: none;
+    --glow-subtle: none;
+    --shadow-elegant: 0 8px 32px 0 hsl(0 0% 0% / 0.08);
+    --shadow-hover: 0 16px 48px 0 hsl(0 0% 0% / 0.12);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   body {
-    font-family: 'SF Pro Display', 'Inter', 'Segoe UI', 'Roboto', 'system-ui', sans-serif;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', 'system-ui', sans-serif;
     font-size: 1.15rem;
     line-height: 1.7;
     background: hsl(var(--background));
     color: hsl(var(--foreground));
     letter-spacing: -0.01em;
     overflow-x: hidden;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   html {
@@ -66,26 +69,47 @@
     padding-top: 6rem;
     padding-bottom: 6rem;
   }
+
+  .highlight {
+    color: hsl(var(--highlight));
+    font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid hsl(var(--highlight));
+    animation: typewriter 2.5s steps(30, end) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: hsl(var(--highlight)); }
+  }
 }
 
 @layer components {
   .glass {
-    backdrop-filter: blur(24px);
-    background: var(--gradient-glass);
+    background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     box-shadow: var(--shadow-elegant);
   }
 
   .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: none;
+    color: hsl(var(--highlight));
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
   }
 
   .neon-button {
-    background: var(--gradient-primary);
-    color: hsl(var(--primary-foreground));
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
     border-radius: 2rem;
     font-weight: 600;
     font-size: 1.1rem;
@@ -95,7 +119,8 @@
     transition: var(--transition-smooth);
   }
   .neon-button:hover {
-    background: hsl(var(--primary) / 0.92);
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
     box-shadow: var(--shadow-hover);
     transform: translateY(-2px) scale(1.03);
   }
@@ -121,7 +146,7 @@
     left: -100%;
     width: 100%;
     height: 2px;
-    background: var(--gradient-primary);
+    background: hsl(var(--foreground));
     transition: var(--transition-smooth);
   }
   .animated-underline:hover::after {
@@ -131,7 +156,7 @@
   .section-divider {
     width: 100vw;
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    background: hsl(var(--border));
     margin: 0 auto;
   }
 }
