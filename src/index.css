@@ -2,198 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Modern Dark Theme with Vibrant Accents */
+/* Apple-Inspired Modern Theme */
 
 @layer base {
   :root {
-    /* Dark theme base colors */
-    --background: 220 13% 9%;
-    --foreground: 220 9% 95%;
-
-    --card: 220 13% 11%;
-    --card-foreground: 220 9% 95%;
-
-    --popover: 220 13% 11%;
-    --popover-foreground: 220 9% 95%;
-
-    /* Vibrant primary with neon purple */
-    --primary: 271 82% 60%;
-    --primary-foreground: 220 9% 95%;
-    --primary-glow: 271 82% 70%;
-
-    /* Subtle secondary */
-    --secondary: 220 13% 15%;
-    --secondary-foreground: 220 9% 85%;
-
-    /* Muted elements */
-    --muted: 220 13% 13%;
-    --muted-foreground: 220 9% 65%;
-
-    /* Accent with cyan */
-    --accent: 193 100% 55%;
-    --accent-foreground: 220 13% 9%;
-    --accent-glow: 193 100% 65%;
-
+    /* Apple-like neutral colors */
+    --background: 0 0% 98%;
+    --foreground: 222 22% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 22% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 22% 10%;
+    --primary: 222 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 222 100% 80%;
+    --secondary: 220 13% 95%;
+    --secondary-foreground: 222 22% 10%;
+    --muted: 220 13% 90%;
+    --muted-foreground: 222 22% 40%;
+    --accent: 222 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 222 100% 80%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 18%;
-    --input: 220 13% 15%;
-    --ring: 271 82% 60%;
-
-    --radius: 0.75rem;
-
-    /* Portfolio specific tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(271 82% 60%) 0%, hsl(193 100% 55%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(220 13% 15%) 0%, hsl(220 13% 11%) 100%);
-    --gradient-glass: linear-gradient(135deg, hsl(220 13% 15% / 0.1) 0%, hsl(220 13% 11% / 0.05) 100%);
-    
-    /* Glow effects */
-    --glow-primary: 0 0 40px hsl(271 82% 60% / 0.4);
-    --glow-accent: 0 0 40px hsl(193 100% 55% / 0.4);
-    --glow-subtle: 0 0 20px hsl(271 82% 60% / 0.2);
-    
-    /* Shadows */
-    --shadow-elegant: 0 10px 30px -5px hsl(220 13% 5% / 0.5);
-    --shadow-hover: 0 20px 50px -10px hsl(271 82% 60% / 0.3);
-    
-    /* Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  /* Dark theme inherits from light theme colors for portfolio */
-  .dark {
-    /* Same as light theme for portfolio - we want dark theme by default */
-    --background: 220 13% 9%;
-    --foreground: 220 9% 95%;
-    --card: 220 13% 11%;
-    --card-foreground: 220 9% 95%;
-    --popover: 220 13% 11%;
-    --popover-foreground: 220 9% 95%;
-    --primary: 271 82% 60%;
-    --primary-foreground: 220 9% 95%;
-    --primary-glow: 271 82% 70%;
-    --secondary: 220 13% 15%;
-    --secondary-foreground: 220 9% 85%;
-    --muted: 220 13% 13%;
-    --muted-foreground: 220 9% 65%;
-    --accent: 193 100% 55%;
-    --accent-foreground: 220 13% 9%;
-    --accent-glow: 193 100% 65%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 220 13% 18%;
-    --input: 220 13% 15%;
-    --ring: 271 82% 60%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 95%;
+    --ring: 222 100% 60%;
+    --radius: 1.5rem;
+    --gradient-primary: linear-gradient(135deg, hsl(222 100% 60%) 0%, hsl(222 100% 80%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(220 13% 95%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 100% / 0.7) 0%, hsl(220 13% 95% / 0.5) 100%);
+    --glow-primary: 0 0 40px hsl(222 100% 60% / 0.08);
+    --glow-accent: 0 0 40px hsl(222 100% 60% / 0.08);
+    --glow-subtle: 0 0 20px hsl(222 100% 60% / 0.04);
+    --shadow-elegant: 0 8px 32px 0 hsl(222 22% 10% / 0.08);
+    --shadow-hover: 0 16px 48px 0 hsl(222 22% 10% / 0.12);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   body {
-    @apply bg-background text-foreground;
+    font-family: 'SF Pro Display', 'Inter', 'Segoe UI', 'Roboto', 'system-ui', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    letter-spacing: -0.01em;
     overflow-x: hidden;
   }
-  
-  /* Smooth scrolling */
+
   html {
     scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: hsl(var(--foreground));
+  }
+
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
 
 @layer components {
-  /* Glass morphism effect */
   .glass {
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(24px);
     background: var(--gradient-glass);
     border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-elegant);
   }
-  
-  /* Gradient text */
+
   .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
-  /* Neon glow button */
+
   .neon-button {
     background: var(--gradient-primary);
-    box-shadow: var(--glow-primary);
+    color: hsl(var(--primary-foreground));
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.75rem 2.5rem;
+    box-shadow: var(--shadow-elegant);
+    border: none;
     transition: var(--transition-smooth);
-    border: 1px solid hsl(var(--primary));
   }
-  
   .neon-button:hover {
-    transform: translateY(-2px);
+    background: hsl(var(--primary) / 0.92);
     box-shadow: var(--shadow-hover);
+    transform: translateY(-2px) scale(1.03);
   }
-  
-  /* Floating animation */
-  .floating {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-  }
-  
-  /* Pulse glow effect */
-  .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
-  
-  @keyframes pulseGlow {
-    0%, 100% { 
-      box-shadow: var(--glow-subtle);
-    }
-    50% { 
-      box-shadow: var(--glow-primary);
-    }
-  }
-  
-  /* Card hover effect */
+
   .card-hover {
     transition: var(--transition-smooth);
     cursor: pointer;
+    box-shadow: var(--shadow-elegant);
   }
-  
   .card-hover:hover {
-    transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-hover);
+    transform: translateY(-6px) scale(1.01);
   }
-  
-  /* Animated underline */
+
   .animated-underline {
     position: relative;
     overflow: hidden;
   }
-  
   .animated-underline::after {
     content: '';
     position: absolute;
@@ -204,47 +124,14 @@
     background: var(--gradient-primary);
     transition: var(--transition-smooth);
   }
-  
   .animated-underline:hover::after {
     left: 0;
   }
-  
-  /* Skill bar animation */
-  .skill-bar {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .skill-bar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background: var(--gradient-primary);
-    transition: width 1s ease-out;
-    width: 0%;
-  }
-  
-  .skill-bar.animate::before {
-    width: var(--skill-width);
-  }
-  
-  /* Typing animation */
-  .typing {
-    overflow: hidden;
-    border-right: 3px solid hsl(var(--primary));
-    white-space: nowrap;
-    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
-  }
-  
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-  
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: hsl(var(--primary)) }
+
+  .section-divider {
+    width: 100vw;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    margin: 0 auto;
   }
 }
