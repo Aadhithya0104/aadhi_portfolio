@@ -27,57 +27,60 @@ const About = () => {
           <h2 className="text-5xl font-bold mb-4 gradient-text">About Me</h2>
           <p className="text-2xl text-muted-foreground max-w-2xl mx-auto font-medium">To secure a position where I can apply my skills and grow within a supportive team.</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
-          {/* Bio */}
-          <div className="space-y-10">
-            <Card className="glass card-hover p-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-4">Education</h3>
-                <ul className="text-lg text-foreground/80 leading-relaxed list-disc list-inside space-y-2">
-                  <li><b>BTech in Information Technology</b> (CGPA: 7.2), Government College of Engineering, Erode</li>
-                  <li><b>Diploma in Mechanical</b> (79%), Kongu Polytechnic College, Erode (July 2018 - June 2020)</li>
-                  <li><b>SSLC</b>, Jaycees Matric Higher Secondary School, Erode (Apr 2018)</li>
-                </ul>
-              </CardContent>
-            </Card>
-            <Card className="glass card-hover p-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-4">Areas of Interest</h3>
-                <div className="flex flex-wrap gap-3 mb-6">
-                  {["Digital Marketing", "Data Analysis", "Social Media Advertising"].map((area) => (
-                    <Badge key={area} variant="secondary" className="bg-muted text-foreground border-border/40 text-base px-4 py-2 rounded-full font-medium">
-                      {area}
-                    </Badge>
-                  ))}
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 mt-8">Soft Skills</h3>
-                <ul className="list-disc list-inside text-lg text-foreground/80 space-y-1">
-                  <li>Creativity & Problem-Solving</li>
-                  <li>User-Centered Design</li>
-                  <li>Wireframing & Prototyping</li>
-                  <li>Collaboration & Communication</li>
-                  <li>Attention to Detail</li>
-                  <li>Project Management</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-          {/* Skills */}
-          <div className="space-y-10">
-            <Card className="glass card-hover p-0">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
-                <div className="flex flex-wrap gap-6 items-center justify-start">
-                  {skillIcons.map((skill) => (
-                    <div key={skill.name} className="flex flex-col items-center w-20">
-                      {skill.icon}
-                      <span className="text-sm text-foreground/80 text-center mt-2">{skill.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        <div className="grid md:grid-cols-3 gap-8 items-start mb-20">
+          {/* Education */}
+          <Card className="glass card-hover p-0 h-full flex flex-col justify-between">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold mb-4">Education</h3>
+              <ul className="text-lg text-foreground/80 leading-relaxed list-disc list-inside space-y-2">
+                <li><b>B.Tech in Information Technology</b> (CGPA: 7.2), Government College of Engineering, Erode(2025)</li>
+                <li><b>Diploma in Mechatronics</b> (79%), Kongu Polytechnic College, Erode (July 2018 - June 2020)</li>
+                <li><b>SSLC</b>, Jaycees Matric Higher Secondary School, Erode (Apr 2018)</li>
+              </ul>
+            </CardContent>
+          </Card>
+          {/* Areas of Interest */}
+          <Card className="glass card-hover p-0 h-full flex flex-col justify-between">
+            <CardContent className="p-8 flex flex-col h-full">
+              <h3 className="text-2xl font-semibold mb-4">Area of Interest</h3>
+              <div className="flex flex-wrap gap-3 mb-2">
+                {["Frontend Development", "UI/UX Design", "Design Tools", "Wireframing & Prototyping", "Analytics & Data Skills"].map((area) => (
+                  <Badge key={area} variant="secondary" className="bg-muted text-foreground border-border/40 text-base px-4 py-2 rounded-full font-medium">
+                    {area}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+          {/* Soft Skills */}
+          <Card className="glass card-hover p-0 h-full flex flex-col justify-between">
+            <CardContent className="p-8 flex flex-col h-full">
+              <h3 className="text-2xl font-semibold mb-4">Soft Skills</h3>
+              <div className="flex flex-wrap gap-3">
+                {["Creativity & Problem-Solving", "User-Centered Design", "Wireframing & Prototyping", "Collaboration & Communication", "Attention to Detail", "Project Management"].map((skill) => (
+                  <Badge key={skill} variant="secondary" className="bg-muted text-foreground border-border/40 text-base px-4 py-2 rounded-full font-medium">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        {/* Technical Skills */}
+        <div className="max-w-3xl mx-auto mb-20">
+          <Card className="glass card-hover p-0">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold mb-6">Technical Skills</h3>
+              <div className="flex flex-wrap gap-6 items-center justify-start">
+                {skillIcons.map((skill) => (
+                  <div key={skill.name} className="flex flex-col items-center w-20">
+                    {skill.icon}
+                    <span className="text-sm text-foreground/80 text-center mt-2">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </div>
         <div className="section-divider" />
       </div>
