@@ -2,14 +2,24 @@ import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
+import "../index.css";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
+  const [waveAnim, setWaveAnim] = useState(true);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  useEffect(() => {
+    if (waveAnim) {
+      const timer = setTimeout(() => setWaveAnim(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [waveAnim]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -30,7 +40,7 @@ const Hero = () => {
           <p className="text-xl sm:text-2xl text-white mb-3 font-semibold">Hi, I am</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 text-white break-words">Aadhithya Viswanathan</h1>
           <div className="text-lg sm:text-2xl md:text-3xl text-gray-200 mb-8 font-bold">Frontend UI/UX Designer</div>
-          <div className="flex gap-3 sm:gap-4 mb-8 flex-wrap">
+          <div className={`flex gap-3 sm:gap-4 mb-8 flex-wrap ${waveAnim ? 'sea-wave-anim' : ''}`}>
             <a href="mailto:aadhithyaviswanathan@gmail.com" className="p-2 bg-white rounded shadow hover:scale-105 transition" aria-label="Email">
               <Mail className="w-6 h-6 sm:w-7 sm:h-7 text-neutral-700" />
             </a>
@@ -42,25 +52,16 @@ const Hero = () => {
             </a>
           </div>
           <div className="flex flex-wrap gap-4 sm:gap-6">
-            <Button
-              className="neon-button text-base sm:text-xl px-6 sm:px-10 py-3 sm:py-5 rounded-full font-bold"
-              onClick={() => scrollToSection('projects')}
-            >
-              View My Work
-            </Button>
-            <Button
-              variant="outline"
-              className="glass text-base sm:text-xl px-6 sm:px-10 py-3 sm:py-5 rounded-full border-primary/50 hover:border-primary transition-colors font-bold"
-              onClick={() => scrollToSection('contact')}
-            >
-              Get In Touch
-            </Button>
-          </div>
-          {/* Navigation buttons for About, Projects, Contact */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 mt-8 justify-center">
-            <Button className="w-28 sm:w-36" onClick={() => navigate('/about')}>About</Button>
-            <Button className="w-28 sm:w-36" onClick={() => navigate('/projects')}>Projects</Button>
-            <Button className="w-28 sm:w-36" onClick={() => navigate('/contact')}>Contact</Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="chatbot-3d-btn text-base sm:text-xl px-6 sm:px-10 py-3 sm:py-5 rounded-full font-bold">
+                  Chatbot
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <div className="text-lg font-semibold text-center">The chatbot is training and will be coming soon.</div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </div>

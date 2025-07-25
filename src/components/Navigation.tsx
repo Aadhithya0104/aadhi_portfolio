@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Mail, Linkedin, Github, Phone, MessageCircle, User, Folder, Mail as MailIcon } from "lucide-react";
 import EnvelopeAnimation from "@/components/ui/envelope-animation";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,17 +19,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#hero" },
-    { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
-    { name: "Contact", href: "#contact" }
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" }
   ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId.replace('#', ''));
-    element?.scrollIntoView({ behavior: 'smooth' });
-    setIsMobileMenuOpen(false);
-  };
 
   const whatsappNumber = "8072660284";
   const whatsappMsg = encodeURIComponent("Hi Aadhithya this is (client name ) your profile was good can we schedule for a interview");
@@ -45,14 +40,20 @@ const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
-            <button
+            <NavLink
               key={item.name}
-              onClick={() => scrollToSection(item.href)}
-              className="text-lg font-medium text-foreground/90 hover:text-primary transition-colors animated-underline px-2 py-1"
-              style={{fontWeight: 500, letterSpacing: '-0.01em'}}
+              to={item.path}
+              className={({ isActive }) =>
+                `text-lg font-medium px-2 py-1 transition-colors duration-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+                  isActive
+                    ? "text-primary bg-primary/10 shadow-md"
+                    : "text-foreground/90 hover:text-primary hover:bg-primary/10 hover:shadow-md"
+                }`
+              }
+              style={{ fontWeight: 500, letterSpacing: '-0.01em' }}
             >
               {item.name}
-            </button>
+            </NavLink>
           ))}
         </div>
         {/* CTA Button */}
