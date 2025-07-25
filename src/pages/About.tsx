@@ -12,7 +12,7 @@ const AboutPage = () => {
     <div className="relative min-h-screen">
       {/* Sidebar Toggle Button */}
       <button
-        className="fixed top-6 left-6 z-50 bg-white rounded-full p-3 shadow-lg border border-gray-200 hover:bg-gray-100 transition-colors"
+        className="fixed top-6 left-6 z-50 bg-white rounded-full p-3 shadow-lg border border-gray-200 hover:bg-gray-100 transition-colors md:top-6 md:left-6 md:bottom-auto md:transform-none md:rounded-full md:p-3 md:w-auto md:h-auto w-14 h-14 bottom-4 left-1/2 transform -translate-x-1/2 md:translate-x-0 md:w-auto md:h-auto"
         onClick={() => setSidebarOpen((v) => !v)}
         aria-label="Open navigation sidebar"
         style={{ display: sidebarOpen ? 'none' : 'block' }}
@@ -21,9 +21,9 @@ const AboutPage = () => {
       </button>
       {/* Sidebar */}
       {sidebarOpen && (
-        <div className="fixed top-1/2 left-6 -translate-y-1/2 flex flex-col gap-4 z-40 sidebar-nav animate-fade-in">
+        <div className="fixed md:top-1/2 md:left-6 md:-translate-y-1/2 md:flex-col md:gap-4 md:sidebar-nav flex flex-row gap-2 bottom-0 left-0 w-full justify-center bg-white/90 md:bg-transparent py-2 z-40 sidebar-nav animate-fade-in">
           <button
-            className="absolute -top-4 -right-4 bg-white rounded-full p-1 shadow border border-gray-200"
+            className="absolute md:static top-2 right-4 md:-top-4 md:-right-4 bg-white rounded-full p-1 shadow border border-gray-200"
             onClick={() => setSidebarOpen(false)}
             aria-label="Close navigation sidebar"
           >
