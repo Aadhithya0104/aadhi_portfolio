@@ -40,7 +40,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 md:py-5 flex items-center justify-between h-[4.5rem]">
         {/* Logo */}
         <div className="text-2xl md:text-3xl font-bold tracking-tight" style={{letterSpacing: '-0.03em'}}>
-          Aadhi's Portfolio
+          Portfolio of Aadhi
         </div>
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
